@@ -1,0 +1,136 @@
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+A Data Model in Database Management System (DBMS)  is the concept of tools that are developed to summarize the description of the database.
+
+Types of Relational Models
+Conceptual Data Model
+Representational Data Model
+Physical Data Model
+
+ 1.Conceptual Data Model
+The conceptual data model describes the database at a very high level and is useful to understand the needs or requirements of the database.
+It is this model, that is used in the requirement-gathering process i.e. before the Database Designers start making a particular database
+
+ 2.Representational Data Model
+This type of data model is used to represent only the logical part of the database and does not represent
+the physical structure of the database. The representational data model allows us to focus primarily, on the design part of the database.
+
+ 3.Physical Data Model
+ The physical Data Model is used to practically implement Relational Data Model. Ultimately, all data in a database is stored physically on a secondary storage device such as discs and tapes.
+ This is stored in the form of files, records, and certain other data structures
+ 
+ 
+ 4.Hierarchical Model
+The hierarchical Model is one of the oldest models in the data model which was developed by IBM, in the 1950s. In a hierarchical model, data are viewed
+as a collection of tables, or we can say segments that
+form a hierarchical relation. In this, the data is organized into a tree-like structure where each record consists of one parent record and many children.
+
+ 5.Context Data Model
+The Context data model is simply a data model which consists of more than one data model.
+For example, the Context data model consists of ER Model, Object-Oriented Data Model, etc. This model allows users to do more than one thing which each individual data model can do.
+
+ 6.Semi-Structured Data Model
+Semi-Structured data models deal with the data in a flexible way.
+Some entities may have extra attributes and some entities may have some missing attributes. Basically, you can represent data here in a flexible way
+
+Float Data Model
+The float data model basically consists of a two-dimensional array of data models that do not contain
+any duplicate elements in the array. This data model has one drawback it cannot store a large amount of data that is the tables can not be of large size.
+
+Object-Oriented Data Model
+In the Object-Oriented Data Model, data and their relationships are contained in a single structure which is referred to as an object in this data model. In this, real-world problems are represented as
+objects with different attributes. All objects have multiple relationships between them. Basically, it is a combination of Object Oriented programming and a Relational Database Model.
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Database Language
+Database language refers to the specific types of commands or instructions used to communicate with a database. It helps users or applications to create, manage, update,
+and retrieve data from a database. database language is like a set of tools that help you talk to and work with the data stored in a database.
+
+Types of Database Languages in DBMS
+There are different types of database languages, including DDL, DCL, DML, and TCL.
+
+DDL (Data Definition Language)
+The DDL stands for Data Definition Language, Which is used to define the database’s internal structure and Pattern of the Database.
+The DDL is used for creating tables, indexes, constraints, and schema in the Database.
+By using DDL statements we can able to create the architecture of the required database.
+
+create command
+It is one of the commands in DDL that is used for creating objects the database means creating Tables, Users, Triggers, functions, and other objects.
+CREATE TABLE Students (
+    column1 INT,
+    column2 VARCHAR(50),
+    column3 INT
+);
+
+DCL (Data Control Language)
+The DCL stands for Data Control Language means these commands are used to retrieve the
+saved data from the database. And one more thing is the DCL execution is Transactional which means It has rollback parameters. we have two tasks under the Data Control Language below I listed them
+
+Grant: It is used to give user access to the database
+Revoke: It is used to take back access or permissions from the user
+
+DML (Data Manipulation Language)
+The Data Manipulation Language is used to Manipulate the data in the database by using different commands.
+In this category we can able to perform Insert new data into Table, Update existing data in the Table,
+Delete Data from the Table, and other functions we can perform on data by using these DML commands. Below I listed those commands for your reference
+
+Select: It is used to select data from the Table based on the requirements
+Insert: It is used for Inserting data into an existing table
+Update: It is used to update data in the Table based on the requirement
+Delete: It is used to delete data from the Table
+Merge: It is used for upsert operations
+Call: It is used to call a structured query language or Java sub-program
+Lock Table: It can control the concurrency
+
+Insert Command
+The INSERT command in SQL (Structured Query Language) is used to add new records or rows to
+a table in a database. This command is essential for populating a database with data and can be used to insert data into all or specific columns of a table.
+
+Syntax
+INSERT INTO Table_Name (Column 1, Column 2, Column 3, Column 4) VALUES (Value 1, Value 2,Value 3, Value 4);
+
+
+TCL ( Transaction Control Language )
+The TCL full form is Transaction Control Language commands are used to run the changes made by the
+DML commands one more thing is TCL can be grouped into a logical transaction. We have two different commands in this category I listed them for reference.
+
+Commit: It is used to save the transaction on the Database. These are very useful in the banking sector.
+Rollback: It is used to restore the database to its original state from the last commit. This command also plays an important role in Banking Sectors.
+
+
+Commit Command
+The Commit command is used to save the transaction in the database and changes are made by the DML statements.
+Now I will provide the example below Here I used ClassMembers Table. Here I inserted new data into the Table then I committed It.
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+In a Database Management System (DBMS), constraints are rules applied to data
+tables to ensure accuracy, consistency, and integrity. These rules restrict the 
+ypes of data that can be entered, maintaining the reliability of the database. There are several types of constraints in DBMS:
+
+NOT NULL: Ensures that a column cannot have a NULL value. Every record must have a valid data entry in that specific field.
+Example: In a student database, the "student_id" column must have a value for every student.
+
+
+UNIQUE: Guarantees that all values in a column are distinct. No duplicate values are allowed in the column where this constraint is applied.
+Example: A "social_security_number" column should have unique entries for every individual.
+
+
+PRIMARY KEY: A combination of NOT NULL and UNIQUE constraints. It uniquely identifies each record in a table and ensures that no field in this key can be null.
+Example: In a table of employee data, "employee_id" can be set as the primary key.
+
+
+FOREIGN KEY: This constraint ensures referential integrity by linking two tables. It requires that a column’s values in one table must correspond to values in another table’s primary key.
+Example: In an "orders" table, the "customer_id" should match a valid "customer_id" from the "customers" table.
+
+
+CHECK: Restricts the values in a column based on a specified condition.
+Example: In a table of products, the "price" column should have a positive value, so a CHECK constraint can ensure prices are always greater than zero.
+
+
+DEFAULT: Provides a default value for a column when no value is provided by the user.
+Example: If no country is entered in a "customer_address" table, it could default to "USA."
+By enforcing constraints, DBMS maintains data integrity and helps prevent invalid data entry, ensuring the database remains reliable and accurate.
